@@ -1,45 +1,42 @@
+The **Polygon Chain Development Kit (CDK)** is a modular, open-source framework for building scalable and secure Layer 2s (L2s). Designed for flexibility, the Polygon CDK stack has 3 main configurations (with options to customize further): zk rollup config, validium config, and the Agglayer native config.
+
 ---
-comments: true
+
+## Why Use Polygon CDK?
+
+### **1. Build ZK-Powered Chains**
+Polygon CDK enables developers to launch chains using cutting-edge zero-knowledge (ZK) technology for:
+- **Trustless Finality**: Transactions are validated without relying on centralized authorities.
+- **Maximum Security**: Leverage zk-proofs to safeguard user data and ensure cryptographic integrity.
+
+### **2. Modular Architecture**
+- **Customizable Components**: Select and configure modules like consensus, data availability, and proving systems to fit your use case.
+- **Future-Ready Design**: Adapt your chain as requirements evolve or new technologies emerge.
+
+### **3. Interoperability**
+- **Agglayer Integration**: Seamlessly connect to Agglayer for cross-chain functionality and ecosystem bootstrapping.
+- **Ethereum-Compatible**: Build on a foundation that supports Ethereum tooling, enabling easy adoption and user migration.
+
+### **4. High Performance**
+- **Erigon Client**: Benefit from faster syncing and high transaction throughput powered by the optimized Erigon architecture.
+- **Cost Efficiency**: Reduce transaction fees by orders of magnitude compared to Ethereum Layer 1.
+
+### **5. Sovereignty**
+Maintain full control over your chain’s:
+- Governance and revenue.
+- Security policies and economic frameworks.
+- Finality and operational structure.
+
 ---
 
-Polygon Chain Development Kit (CDK) is a modular, open source software toolkit for blockchain developers which supports the installation and configuration of a variety of chain architectures. Polygon CDK empowers developers to launch new L2 chains running Polygon zkEVM technology on Ethereum or, in the future, transition existing Layer 1 (L1) chains into ZK-EVM L2s. 
+## Key Features at a Glance
 
-!!! warning "ZK-EVM versus zkEVM - term usage"
-    -  **ZK-EVM**: The capitalized and hyphenated usage of the term refers to any zero-knowledge rollup chain in general.
-    - **zkEVM** refers to Polygon's zero-knowledge rollup and validium scaling solution.
+| **Feature**            | **Description**                                         |
+|-------------------------|---------------------------------------------------------|
+| **Trustless Finality**  | ZK-powered chains with decentralized validation.        |
+| **Scalable Design**     | Optimized for high transaction throughput and low fees. |
+| **Customizability**     | Modular components tailored to specific use cases.      |
+| **Cross-Chain Ready**   | Connect seamlessly to other chains via Agglayer.        |
+| **High-Speed Syncing**  | Built on the ultra-efficient Erigon client.             |
 
-## CDK options
-
-With Polygon CDK, developers can select a chain architecture specific to their needs from a set of supported, open source components. Alternatively, developers can select custom components for specific requirements. The diagram below shows the two supported configuration options, zkEVM rollup or validium. zkEVM rollups post transaction data from Polygon CDK directly onto Ethereum, whereas validiums only post the transaction hashes, while storing transaction data off-chain.
-
-![](../img/cdk/overview-1.png)
-
-A chain tailored for a specific application might leverage the zkEVM execution environment, adopt the validium mode, and implement a centralized sequencer. 
-
-!!! note "Example use case"
-     A CDK zkEVM rollup L2 chain dedicated to running a game has lower security requirements than a high-value DeFi application. This could also use a validium mode for off-chain data availability to further reduce transaction costs.
-
-!!! info "Coming soon"
-     Upon the completion of the aggregation layer, every chain will have the option to be interoperable with other Polygon network chains. For now, the aggregation layer in the CDK kit allows for independent chains (1-to-1) to settle independently.
-
-## Sovereign and modular chain design
-
-Polygon CDK gives developers a toolkit for sovereign and modular chain design, without sacrificing future interoperability with other L2 chains. Chains built with Polygon CDK can access an ecosystem of (forthcoming) unified liquidity, optimized performance, and seamless asset transfers, all while prioritizing user experience and data security.
-
-## CDK features
-
-Here is what developers can expect when they build with Polygon CDK.
-
-1. **Modularity and sovereignty**: Polygon CDK offers a modular environment for ZK-powered L2 chain design. Developers can customize chains according to their needs.
-2. **Scalability**: Polygon CDK-developed L2 chains enhance transaction speed and can be multiplied to achieve an elastically scalable ecosystem.
-3. **Independent data availability**: With a dedicated data availability layer and a data availability committee, Polygon CDK-developed chains provide robust off-chain data access and reliability. This structure, independent of Ethereum, ensures substantial data resilience and integrity.
-4. **Interoperability (forthcoming)**: Through an in-development interop layer, CDK-developed chains can be seamlessly interoperable, meaning atomic L2 <> L2 transactions. Chains deployed with Polygon CDK will have the opportunity to opt-in to the interop layer and tap unified liquidity.
-5. **Near-instant finality**: Chains deployed using Polygon CDK rely on cryptographic security, ensuring transaction integrity without the need of full nodes. This approach guarantees near-instant finality and robust security.
-6. **Extensive Web3 support**: Polygon CDK chains leverage a comprehensive ecosystem with premium service providers offering essential tools for application integration, development, and deployment.
-
-!!! important "Why are there zkEVM docs in the CDK section?"
-     Several of the docs point to zkEVM specific deployment documentation because the rollup flavor of CDK uses zkEVM deployment defaults.
-
-The following diagram illustrates how Polygon CDK-developed chains may opt into a web of interoperable L2 chains: 
-
-![img](https://lh7-eu.googleusercontent.com/5GJavrjHtRP1LC-N-MmG6yZjaN9QG0N4Xk8hl_lRAMIuuKl1KKLB2pQJz9AMX5u19renKi7acrVMQ2aos5X2bAmEFBnADlVTKpbHOxvny7luASdK_qYI-3L5u4GFb8PBjRpI2KOjYNFh-C-UoLdBbpE)
+---

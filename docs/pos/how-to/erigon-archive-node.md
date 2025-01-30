@@ -1,22 +1,24 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 ## System requirements
 
-- **CPU:** 16-core, 64-bit architecture
-- **RAM:** 64GB
-- **Storage**
-    - Basically **io1** or above with at least 20k+ iops and RAID-0 based disk structure
-    - Mainnet archive node: 10TB
+- CPU: 16-core, 64-bit architecture
+- RAM: 64GB
+- Storage
+    - Basically `io1` or above with at least 20k+ iops and RAID-0 based disk structure
+    - Mainnet archive node: 15TB
     - Amoy testnet archive node: 1TB
-    - SSD or NVMe. Bear in mind that SSD performance deteriorates when close to capacity
-- **Golang:** >= v1.20
-- **GCC:** >= v10
+    - SSD or NVMe. Bear in mind that SSD performance deteriorates when close to capacity.
+- Golang: >= v1.20
+- GCC: >= v10
 
-!!! note "HDD not recommended"
+!!! tip "HDD not recommended"
 
-    On HDDs, Erigon will always stay *N* blocks behind the chain tip, but will not fall behind. 
+    On HDDs, Erigon will always remain *N* blocks behind the chain tip, but will not fall further behind. 
 
 
 ## Install Erigon client
@@ -34,16 +36,16 @@ This should create the binary at `./build/bin/erigon`
 
 ## Start Erigon client
 
-When connecting to Amoy testnet, use the following command to start your Erigon client:
-
-```bash
-erigon --chain=amoy
-```
-
 If you're deploying to mainnet, run the following command:
 
 ```bash
 erigon --chain=bor-mainnet --db.size.limit=12TB --db.pagesize=16KB # remaining flags follow
+```
+
+When connecting to Amoy testnet, use the following command to start your Erigon client:
+
+```bash
+erigon --chain=amoy
 ```
 
 ## Configure Erigon client
@@ -60,11 +62,11 @@ If you are not using local **heimdall**, use `-bor.heimdall=<your heimdall url>`
 erigon --chain=amoy --bor.heimdall=<your heimdall url> --datadir=<your_data_dir>
 ```
 
-!!! note
+## Node RPC
 
-    - If you want to connect to Polygon Amoy Testnet, use: [https://heimdall-api-amoy.polygon.technology](https://heimdall-api-amoy.polygon.technology)
+- If you want to connect to PoS Amoy Testnet, use: [https://heimdall-api-amoy.polygon.technology](https://heimdall-api-amoy.polygon.technology)
 
-    - For Polygon mainnet, use: [https://heimdall-api.polygon.technology](https://heimdall-api.polygon.technology)
+- For PoS mainnet, use: [https://heimdall-api.polygon.technology](https://heimdall-api.polygon.technology)
 
 !!! tip 
 
