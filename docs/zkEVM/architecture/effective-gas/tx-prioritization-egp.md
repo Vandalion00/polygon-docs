@@ -37,23 +37,23 @@ The deviation percentage is compared to a parameter called $\texttt{FinalDeviati
 This presents 2 scenarios and their corresponding consequences:
 
 1. If the percentage deviation is lower than the final deviation parameter,
-   
-   $$
-   \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 < \texttt{FinalDeviationParameter} = 10,
-   $$
-   
-   it indicates that there is minimal distinction between charging the user with $\texttt{NEGP}$ compared to $\texttt{EEGP}$.
-   
-   Despite potential losses to the network, the user gets charged the $\texttt{EEGP}$ amount as the gas price. 
+    
+    $$
+    \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 < \texttt{FinalDeviationParameter} = 10,
+    $$
+
+    it indicates that there is minimal distinction between charging the user with $\texttt{NEGP}$ compared to $\texttt{EEGP}$.
+
+    Despite potential losses to the network, the user gets charged the $\texttt{EEGP}$ amount as the gas price.
 
 2. On the contrary, if the percentage deviation equals or exceeds the deviation parameter,
-   
-   $$
-   \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 ≥ \texttt{FinalDeviationParameter}  = 10,
-   $$
-   
-   the difference between executions can be so big it warrants adjustment of the gas price to be $\texttt{NEGP}$​, and thus mitigate against potential losses to the network.
-   
+    
+    $$
+    \frac{|\texttt{NEGP} − \texttt{EEGP}|}{\texttt{EEGP}} \cdot 100 ≥ \texttt{FinalDeviationParameter}  = 10,
+    $$
+
+    the difference between executions can be so big it warrants adjustment of the gas price to be $\texttt{NEGP}$​, and thus mitigate for potential losses to the network.
+
 ### Effective percentage
 
 The last parameter called the $\texttt{EffectivePercentage}$ is used to measure the unused portion of the user's signed gas price. 
@@ -124,4 +124,4 @@ Ultimately, the scheme is accurate and fair to both the users and the zkEVM netw
 
 Check out this [repo](https://github.com/0xPolygonHermez/zkevm-rom/issues/316) for a detailed example of how the effective gas price is calculated.
 
-A more elaborate and expanded documentation of the EGP scheme can be found in the specifications section [here](../../spec/user-fees/index.md).
+The content of this document series was sourced from the [User fees document](https://github.com/0xPolygonHermez/zkevm-techdocs/blob/main/knowledge-layer/architecture/PDFs/users-fees.pdf).

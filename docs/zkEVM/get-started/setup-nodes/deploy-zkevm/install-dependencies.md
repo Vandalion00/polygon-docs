@@ -1,6 +1,8 @@
+<!--
 ---
 comments: true
 ---
+-->
 
 Open a terminal window and run the following commands to install the required software.
 
@@ -26,7 +28,7 @@ newgrp docker && newgrp $USER
 ```sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 source ~/.bashrc
-nvm install 16
+nvm install 18
 node -v
 ```
 

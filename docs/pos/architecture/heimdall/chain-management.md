@@ -1,20 +1,20 @@
 This document specifies an overview of the chain manager module of Heimdall.
 
-The **chain manager** module provides all necessary dependencies like `contract-addresses`, `bor_chain_id,` and `tx_confirmation_time`. Other parameters can be added to this later on.
+The *chain manager* module provides all necessary dependencies like `contract-addresses`, `bor_chain_id,` and `tx_confirmation_time`. Other parameters can be added to this later on.
 
 Params are updated through the `gov` module.
 
 ## Types
 
-Chainmanager structure on Heimdall looks like the following:
+The chain manager structure on Heimdall looks like the following:
 
 ```go
 type ChainParams struct {
  // BorChainID is valid bor chainId
  BorChainID            string                  `json:"bor_chain_id" yaml:"bor_chain_id"`
 
- // MaticTokenAddress is valid matic token address
- MaticTokenAddress     hmTypes.HeimdallAddress `json:"matic_token_address" yaml:"matic_token_address"`
+ // PolTokenAddress is valid POL token address
+ PolTokenAddress     hmTypes.HeimdallAddress `json:"pol_token_address" yaml:"pol_token_address"`
 
  // StakingManagerAddress is valid contract address
  StakingManagerAddress hmTypes.HeimdallAddress `json:"staking_manager_address" yaml:"staking_manager_address"`
@@ -41,19 +41,19 @@ type ChainParams struct {
 
 ### Parameters
 
-To print all params;
+Use the following command to print all params:
 
 ```go
 heimdallcli query chainmanager params --trust-node
 ```
 
-### Expected result
+Expected result:
 
 ```yaml
 tx_confirmation_time: 12s
 chain_params:
   bor_chain_id: "15001"
-  matic_token_address: "0x0000000000000000000000000000000000000000"
+  pol_token_address: "0x0000000000000000000000000000000000000000"
   staking_manager_address: "0x0000000000000000000000000000000000000000"
   root_chain_address: "0x0000000000000000000000000000000000000000"
   staking_info_address: "0x0000000000000000000000000000000000000000"
